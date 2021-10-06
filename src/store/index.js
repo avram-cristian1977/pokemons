@@ -1,11 +1,12 @@
 import {createAsyncThunk, createSlice, configureStore}  from '@reduxjs/toolkit'
 
 
-const fetchPokemonsData = createAsyncThunk("pokemons/fetchPokemonsData",
+export const fetchPokemonsData = createAsyncThunk("pokemons/fetchPokemonsData",
 async () => {
    try  {
        const response = await fetch("https://pokeapi.co/api/v2/pokemon-species")
        const data = await response.json()
+      
        return data
    }
    catch (error) {
@@ -42,7 +43,7 @@ const pokemonsSlice = createSlice({
 
 const store = configureStore({
     reducer:{
-        pokemoms:pokemonsSlice.reducer
+        pokemons:pokemonsSlice.reducer
     }
 })
 
