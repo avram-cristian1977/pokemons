@@ -4,7 +4,7 @@ import {createAsyncThunk, createSlice, configureStore}  from '@reduxjs/toolkit'
 const fetchPokemonsData = createAsyncThunk("pokemons/fetchPokemonsData",
 async () => {
    try  {
-       const response = await fetch("https://pokeapi.co/api/v2/")
+       const response = await fetch("https://pokeapi.co/api/v2/pokemon-species")
        const data = await response.json()
        return data
    }
