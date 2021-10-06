@@ -10,8 +10,9 @@ const Pokemons = () => {
 
     const dispatch = useDispatch()
     const pokemonsListData = useSelector(state => state.pokemons.pokemons)
+    const isLoading = useSelector(state => state.pokemons.isLoading)
 
-    console.log("pokemonsListData", pokemonsListData);
+    console.log("pokemonsListData", pokemonsListData.results);
 
 
     const getPokemonsList = () => {
@@ -20,7 +21,18 @@ const Pokemons = () => {
 
  
 
-    return <h1>list of pokemons</h1>
+    return <>
+    <h1>list of pokemons</h1>
+    {isLoading === "PENDING" && <p style={{ color: "green" }}>LOADING...</p>}
+    {isLoading === "REJECTED" && <p style={{ color: "red" }}>Something went wrong. Pleasetry again later.</p>}
+    
+    {pokemonsListData.results ? pokemonsListData.results.map((pokemon)=>{
+        return <div key={pokemon.name}>{pokemon.name}
+        <a href="#">{pokemon.url}</a>
+        </div>
+        
+    }) : " "}
+    </>
 }
  
 export default Pokemons;
