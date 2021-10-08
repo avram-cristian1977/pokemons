@@ -19,9 +19,9 @@ const App = () => {
      <Route path="/pokemons" exact>
         <Pokemons/>
      </Route>
-     <Route path="/pokemons/:id">
-        <PokemonDetails/>
+     <Route path="/pokemons-details/:name" children={<PokemonDetails/>}>
      </Route>
+     
      <Route path="*">
           <PageNotFound />
         </Route>
