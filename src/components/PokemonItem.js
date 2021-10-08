@@ -17,15 +17,15 @@ const PokemonItem = ({ name }) => {
     }
 
 
-    console.log("pokemonInfos infos", pokemonInfos);
+    // console.log("pokemonInfos infos", pokemonInfos);
     return <>
 
-            <Link to={`/pokemons-details/${name}`} className={classes.pokemonItem}>
-        <div className={classes.pokemonCard}>
+        <Link to={`/pokemons-details/${name}`} className={classes.pokemonItem}>
+            <div className={classes.pokemonCard}>
                 <h3>{name}</h3>
                 {pokemonInfos ? <img src={pokemonInfos.sprites.front_default} alt="pokePic" /> : ""}
-        </div>
-            </Link>
+            </div>
+        </Link>
 
     </>
 }

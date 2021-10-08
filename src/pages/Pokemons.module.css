@@ -34,3 +34,42 @@
     background-color: rgb(255, 255, 255);
    }
 
+
+   .searchInput{
+       margin: 10px;
+   }
+
+   .searchInput::placeholder{
+       font-style: italic;
+   }
+
+
+
+ .inputWrapper input{
+   width: 300px;
+    height:  40px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+    border-radius: 20px 5px 5px 5px;
+    outline: 0;
+    border: none;
+    font-size: 20px;
+    font-family: 'Oswald', sans-serif;
+  }
+
+  #scrollTopBtn{
+  margin: 15px;
+float: right;
+background-color: white;
+color: rgb(25, 25, 75);
+font-size: 20px;
+border-radius: 5px;
+font-weight: bolder;
+border:none;
+outline: none;
+padding: 10px;
+  }
+
+  #scrollTopBtn:hover{
+cursor: pointer;
+    }
