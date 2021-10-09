@@ -8,7 +8,6 @@ display: flex;
 font-size: 3vw;
 padding: 0;
 
-
 & a {
     list-style: none;
     color:white;
@@ -25,15 +24,27 @@ padding: 0;
     border-radius: 4vw 0.5vw 0.5vw 0.5vw;
 }
 `
-
-
 const Navigation = () => {
+
+     const speak = (msg) => {
+        const speech = new SpeechSynthesisUtterance(msg);
+        [speech.voice] = speechSynthesis.getVoices();
+        speechSynthesis.speak(speech);
+      }
+      
+   const mouseOverHandler = (content) => {
+        speak(content)
+      console.log("content", content);
+    }
+
+    const mouseLeaveHandler = () => {
+        speak("mouseLeave")
+    }
     return <header>
         <NanLinks >
-            <NavLink activeClassName={classes.navLinkActive} to="/home">Home</NavLink>
-            <NavLink activeClassName={classes.navLinkActive} to="/pokemons">Pokemons List</NavLink>
+            <NavLink onMouseLeave={()=>mouseLeaveHandler()} onMouseOver={(ev)=>mouseOverHandler(ev.target.text)} activeClassName={classes.navLinkActive} to="/home">Home</NavLink>
+            <NavLink onMouseLeave={()=>mouseLeaveHandler()} onMouseOver={(ev)=>mouseOverHandler(ev.target.text)} activeClassName={classes.navLinkActive} to="/pokemons">Pokemons List</NavLink>
         </NanLinks>
-
     </header>
 }
 
