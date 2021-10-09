@@ -32,18 +32,16 @@ const Navigation = () => {
         speechSynthesis.speak(speech);
       }
       
-   const mouseOverHandler = (content) => {
+   const clickHandler = (content) => {
         speak(content)
       console.log("content", content);
     }
 
-    const mouseLeaveHandler = () => {
-        speak("mouseLeave")
-    }
+ 
     return <header>
         <NanLinks >
-            <NavLink onMouseLeave={()=>mouseLeaveHandler()} onMouseOver={(ev)=>mouseOverHandler(ev.target.text)} activeClassName={classes.navLinkActive} to="/home">Home</NavLink>
-            <NavLink onMouseLeave={()=>mouseLeaveHandler()} onMouseOver={(ev)=>mouseOverHandler(ev.target.text)} activeClassName={classes.navLinkActive} to="/pokemons">Pokemons List</NavLink>
+            <NavLink  onClick={(ev)=>clickHandler(ev.target.text)} activeClassName={classes.navLinkActive} to="/home">Home</NavLink>
+            <NavLink  onClick={(ev)=>clickHandler(ev.target.text)} activeClassName={classes.navLinkActive} to="/pokemons">Pokemons List</NavLink>
         </NanLinks>
     </header>
 }
