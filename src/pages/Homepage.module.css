@@ -5,7 +5,7 @@
     font-size: 24px;
   }
   
-  p {
+ .welcomeMsg{
       position: absolute;
       top:5vw;
     font-weight: 700;
