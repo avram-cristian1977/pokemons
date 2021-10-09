@@ -1,7 +1,25 @@
 import { useParams } from "react-router";
 import { useState, useEffect } from "react";
 import classes from './PokemonDetails.module.css'
+import styled from "styled-components";
+import { useHistory } from "react-router";
+
+const BackBtn = styled.button`
+background-color:white;
+color:"blue";
+padding:5px 10px 5px 10px;
+border-radius:3px;
+margin:5px;
+border:none;
+   
+   & :hover {
+       cursor:pointer;
+   }
+`
+
 const PokemonDetails = () => {
+
+    const history = useHistory()
 
     let { name } = useParams();
 
@@ -11,6 +29,10 @@ const PokemonDetails = () => {
 
 
     const [pokemonDetails, setPokemonDetails] = useState(null)
+
+    const backHandler = () => {
+        history.replace('/pokemons')
+    }
 
 
     const getPokemonInfos = async () => {
@@ -58,6 +80,7 @@ const PokemonDetails = () => {
                 })}
             </ul>
         </>}
+        <BackBtn title="back" onClick={()=>backHandler()}><i className="fas fa-long-arrow-alt-left"></i></BackBtn>
     </div>
 }
 
