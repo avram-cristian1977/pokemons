@@ -1,0 +1,12 @@
+body{
+  background: url('./assests//images/pokemonBackground.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+    font-family: 'Oswald', sans-serif;
+
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
