@@ -27,6 +27,8 @@ padding: 0;
 const Navigation = () => {
 
      const speak = (msg) => {
+        let instance = window.speechSynthesis;
+        instance.cancel();
         const speech = new SpeechSynthesisUtterance(msg);
         [speech.voice] = speechSynthesis.getVoices();
         speechSynthesis.speak(speech);
